@@ -1,0 +1,28 @@
+.HomeLogin {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .button {
+        margin: 0px 8px;
+    }
+
+    .btnGoogle {
+        @extend .button;
+        background-color: #DB4437;
+
+        &:hover {
+            background-color: #C23326;
+        }
+    }
+
+    .btnGitHub {
+        @extend .button;
+        background-color: #171515;
+
+        &:hover {
+            background-color: #000000;
+        }
+    }
+
+}
