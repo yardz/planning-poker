@@ -1,4 +1,8 @@
 .HomeGameAction {
-    display: 'flex';
+    display: flex;
     justify-content: center;
+
+    &>div {
+        margin: 0 16px;
+    }
 }
