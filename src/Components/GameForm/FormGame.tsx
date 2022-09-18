@@ -17,7 +17,7 @@ import { getFirebaseAuth } from "src/Configs/firebase";
 import { Game } from "src/Types";
 import * as yup from "yup";
 import styles from "./FormGame.module.scss";
-import clone from "lodash/clonedeep";
+import clone from "lodash/cloneDeep";
 
 const validationSchema = yup.object({
 	cards: yup.array().of(yup.number().min(0)).min(1).required(),
