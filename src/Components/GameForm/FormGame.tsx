@@ -49,7 +49,6 @@ export const FormGame: React.FC<Props> = () => {
 
 	const [game] = useObjectVal<Game>(ref(db, `games/${user?.uid}`));
 	useEffect(() => {
-		console.log("DATA");
 		const update = clone(initialCardsState);
 		game?.cards?.forEach((v) => {
 			update[v] = true;
@@ -77,8 +76,6 @@ export const FormGame: React.FC<Props> = () => {
 				...values,
 				cards: values.cards.map(Number),
 			};
-			console.log(game);
-
 			return update(ref(db, "games/" + user.uid), game);
 		},
 	});
@@ -122,7 +119,6 @@ export const FormGame: React.FC<Props> = () => {
 								name="showVotes"
 								checked={formik.values.showVotes}
 								onChange={(e) => {
-									console.log(e.target.checked);
 									formik.setFieldValue("showVotes", e.target.checked);
 								}}
 							/>
