@@ -1,0 +1,34 @@
+type StringRequired extends String { validate() { this.length > 0 } }
+type UID extends StringRequired {  }
+type Points extends Number {
+    validate() { this >=0 }
+}
+
+type Player{
+    uid: UID;
+    name: String;
+}
+
+type Game {
+    players: Player[];
+    cards: Points[];
+    votes: Map<UID, Points>;
+    showVotes: Boolean;
+    password: String;
+}
+
+type Database {
+  games: Game[];
+}
+
+path /games/{uid} {
+  read() { isAuth() }
+  write() { isCurrentUser(uid) }
+}
+
+
+path / is Database {}
+
+
+isCurrentUser(uid){ auth != null && auth.uid == uid }
+isAuth() { auth != null }

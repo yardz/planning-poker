@@ -1,4 +1,5 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { isServer } from "src/Utils";
@@ -26,4 +27,9 @@ export const getFirebaseAnalytics = () => {
 	if (!isServer) return;
 	const firebaseApp = getFirebaseApp();
 	return getAnalytics(firebaseApp);
+};
+
+export const getFirebaseRealTimeDatabase = () => {
+	const firebaseApp = getFirebaseApp();
+	return getDatabase(firebaseApp);
 };

@@ -1,7 +1,8 @@
 import { getFirebaseAuth } from "src/Configs/firebase";
 import styles from "./CreateNewGame.module.scss";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Loading, LoginForm } from "src/Components";
+import { FormGame, Loading, LoginForm } from "src/Components";
+import { Typography } from "@mui/material";
 
 export interface CreateNewGameProps {}
 
@@ -14,7 +15,13 @@ export const CreateNewGame: React.FC<CreateNewGameProps> = () => {
 
 	return (
 		<div className={styles.CreateNewGame} data-testid="CreateNewGame">
-			FORM CREATE A NEW GAME
+			<Typography variant="h3" align="center">
+				Create a new Game
+			</Typography>
+
+			<div className={styles.configs}>
+				<FormGame />
+			</div>
 		</div>
 	);
 };

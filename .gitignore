@@ -3,6 +3,9 @@
 .env
 .env.development
 
+database/rules.json
+database/rules.**.json
+
 # dependencies
 /node_modules
 /.pnp
